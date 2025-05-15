@@ -1,0 +1,520 @@
+/* Global Styles */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+}
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background: #f9f9f9;
+}
+
+/* Header & Navigation */
+header {
+  position: sticky;
+  top: 0;
+  background: #333;
+  padding: 1rem;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease;
+  margin: 4px auto 0;
+}
+
+nav a:hover {
+  color: #ffcc00;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Intro Section */
+.intro-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f0f0f5, #ffffff);
+  padding: 4rem 1rem;
+  border-radius: 8px;
+  margin: 4rem auto;
+  max-width: 1000px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s ease-out forwards;
+  animation-delay: 0s;
+}
+
+.intro-image {
+  flex: 0 0 300px;
+  text-align: center;
+}
+
+.intro-image img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 50%;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  transition: transform 0.5s ease;
+}
+
+.intro-image img:hover {
+  transform: scale(1.05);
+}
+
+.intro-text {
+  flex: 1;
+  padding: 1rem 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+.intro-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.intro-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* Sections & Animations */
+section {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s ease-out forwards;
+}
+section:nth-of-type(1) { animation-delay: 0.2s; }
+section:nth-of-type(2) { animation-delay: 0.4s; }
+section:nth-of-type(3) { animation-delay: 0.6s; }
+
+h2 {
+  border-bottom: 2px solid #333;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Form Elements */
+form input,
+form textarea {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #333;
+  box-shadow: 0 0 5px rgba(51, 51, 51, 0.3);
+  outline: none;
+}
+
+form button {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin: 1rem 0;
+  padding: 0.75rem;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+  background: #555;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .intro-section {
+    flex-direction: column;
+  }
+
+  .intro-text {
+    padding: 1rem 0;
+  }
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section h2 {
+  text-align: center;
+}
+
+.intro-section h1 h2{
+  display: flex;
+  align-items: center;
+  justify-content: center;  /* centers the whole intro-content horizontally */
+  gap: 2rem;                /* space between image and text */
+  padding: 4rem 2rem;
+}
+.intro-text {
+  text-align: center;
+}
+
+@font-face {
+    font-family: 'CascadiaCode-Medium';
+    src: url(fonts/CascadiaCode-Medium.ttf);
+}
+
+body{
+    font-family: 'CascadiaCode-Medium', sans-serif
+}
+
+:root {
+  --bg: #F2F2F7;
+  --surface: #FFFFFF;
+  --text-primary: #1C1C1E;
+  --text-secondary: #3C3C43;
+  --accent: #0A84FF;
+  --shadow-light: rgba(0,0,0,0.04);
+  --shadow-medium: rgba(0,0,0,0.1);
+}
+
+/* Global */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+}
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: 'CascadiaCode-Medium', sans-serif; /* or your preferred font */
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Header & Nav */
+header {
+  position: sticky;
+  top: 0;
+  background: var(--surface);
+  box-shadow: 0 1px 3px var(--shadow-medium);
+  padding: 1rem;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+nav {
+  display: flex;
+  width: fit-content;            /* make the nav only as wide as its items */
+  margin: 0 auto 0.5rem;         /* center it horizontally, keep that bottom gap */
+  padding: 0.25rem 1rem;         /* give it a little breathing room */
+  gap: 2rem;                     /* space between links */
+  background: var(--surface);    /* match your card background */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px var(--shadow-light);
+}
+
+nav a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color .3s ease;
+}
+nav a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  margin: 4px auto 0;
+  transition: width .3s ease;
+}
+nav a:hover {
+  color: var(--accent);
+}
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Card styling for Intro + Sections */
+.intro-section,
+section {
+  background: var(--surface);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px var(--shadow-medium);
+  margin: 4rem auto;
+  padding: 2rem 1rem;
+  max-width: 1000px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn .8s ease-out forwards;
+}
+.intro-section { animation-delay: 0s; }
+section:nth-of-type(1) { animation-delay: .2s; }
+section:nth-of-type(2) { animation-delay: .4s; }
+section:nth-of-type(3) { animation-delay: .6s; }
+
+@keyframes fadeIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Intro tweaks */
+.intro-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.intro-image img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 50%;
+  box-shadow: 0 4px 20px var(--shadow-light);
+  transition: transform .5s ease;
+}
+.intro-image img:hover {
+  transform: scale(1.05);
+}
+.intro-text {
+  text-align: center;
+  animation-delay: .5s;
+}
+.intro-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.intro-text p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+/* Section titles */
+h2 {
+  text-align: center;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: .5rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+/* Projects as cards */
+#projects ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+#projects li {
+  background: var(--surface);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px var(--shadow-medium);
+  padding: 1.5rem;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+#projects li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px var(--shadow-medium);
+}
+#projects li strong {
+  color: var(--accent);
+}
+
+/* Contact & Social */
+form {
+  text-align: center;
+}
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.social-icons a {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  transition: transform .3s ease, color .3s ease;
+}
+.social-icons a:hover {
+  transform: scale(1.2) rotate(10deg);
+  color: var(--accent);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .intro-section { flex-direction: column; }
+}
+
+/* make intro sit “under” the others */
+.intro-section {
+  position: relative;
+  z-index: 0;
+}
+
+/* bump up the shadow on About/Projects/Contact cards */
+section {
+  /* a slightly deeper, more diffused shadow */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  /* make sure it layers above the intro */
+  position: relative;
+  z-index: 1;
+}
+
+#about,
+#projects,
+#contact {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure intro sits under the others */
+.intro-section {
+  position: relative;
+  z-index: 0;
+}
+
+/* Give About / Projects / Contact a stronger “lift” */
+#about,
+#projects,
+#contact {
+  position: relative;
+  z-index: 1;                                /* stack above the intro */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: box-shadow .3s ease;
+}
+
+/* Optional: hover accent so you really see the lift */
+#about:hover,
+#projects:hover,
+#contact:hover {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+}
+
+#about {
+  margin-top: -2rem;
+}
+
+/* make intro sit under the super-card */
+.intro-section {
+  position: relative;
+  z-index: 1;
+}
+
+/* the “super-card” wrapper */
+.content-card {
+  max-width: 1000px;
+  margin: -3rem auto 4rem;            /* pull it up over the intro */
+  background: var(--surface);
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+  position: relative;
+  z-index: 2;                         /* ensure it floats above the intro */
+}
+
+/* strip individual shadows/backgrounds from the inner sections */
+.content-card section {
+  background: transparent;
+  box-shadow: none;
+  margin: 0 0 2rem;                   /* spacing between them */
+  padding: 0;
+}
+
+/* no extra space after the last section */
+.content-card section:last-child {
+  margin-bottom: 0;
+}
+
+/* Label styling for stacked inputs */
+form label {
+  display: block;
+  margin-top: 1.25rem;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+/* contact form: stack label → input in one column */
+#contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;    /* keep the whole form centered in its card */
+  text-align: left;       /* left-align all the inline label/text inside */
+}
+
+/* make every label sit above its field */
+#contact form label {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin: 1rem 0 0.5rem;   /* space above/below label */
+  font-weight: 600;
+}
+
+/* keep all inputs/textarea/button the same width */
+#contact form input,
+#contact form textarea,
+#contact form button {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 1rem;
+}
+
+nav {
+  background: #fff;                        /* solid white */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;                      /* keep the rounded pill shape */
+  z-index: 1001;                           /* ensures it floats above content */
+}
+
+
+
