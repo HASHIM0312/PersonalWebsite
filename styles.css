@@ -575,3 +575,16 @@ nav {
   transform: scale(1.2) rotate(10deg);
 }
 
+.project-tech-card {
+  background: #eaf4ff;
+  color: #174ea6; /* Complementary dark blue */
+  border-radius: 8px;
+  padding: 0.4rem 1rem;
+  margin: 0.5rem auto 1rem auto;
+  font-size: 0.95rem;
+  width: fit-content;
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(10,132,255,0.07);
+  font-weight: 500;
+}
+
